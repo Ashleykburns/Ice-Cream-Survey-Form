@@ -1,0 +1,182 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Ice Cream Survey</title>
+    <style>
+        body {
+  font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: bold;
+  color: black;
+  background-image: url(https://media.gettyimages.com/vectors/ice-cream-seamless-pattern-vector-id968285812?s=2048x2048);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+}
+.header {
+  display: block;
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+h1 {
+  font-size: 3rem;
+}
+form {
+  background-color:rgba(252,189,210,0.7);
+  padding: 2rem;
+  border-radius: 2rem;
+}
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;  
+}
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.input-textarea {
+  min-height: 120px;
+  width: 90%;
+  padding: 0.625rem;
+  resize: vertical;
+  border-radious: 10px;
+}
+.submit-button {
+  display: block;
+  width: 50%;
+  padding: 0.75rem;
+  color: inherit;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+.form-control {
+    display: block;
+    width: 95%;
+    height: 2.3rem;
+    padding: 0.375rem 0.75rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#dropdown {
+  height: 3rem;
+}
+#name-label, #email-label, #number-label {
+  font-size: 1.5rem;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title">Ice Cream Survey</h1>
+            <p id="description">Tell us what you like!</p>
+        </header>
+        <form id="survey-form">
+            <div class="form-group">
+                <label id="name-label" for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email"
+                    required>
+            </div>
+            <div class="form-group">
+                <label id="number-label" for="number">Age</label>
+                <input type="number" name="age" id="number" min="1" max="99" class="form-control" placeholder="Age"
+                    required>
+            </div>
+            <div class="form-group">
+                <p>What time do you eat ice cream?</p>
+                <select id="dropdown" name="time" class="form-control" required>
+                    <option value="anytime">Anytime!</option>
+                    <option value="dinner">After dinner</option>
+                    <option value="special">Special Occasion</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>How often do you eat ice cream?</p>
+                <label><input name="user-eats" value="frequently" type="radio" class="input-radio">Frequently</label>
+                <label><input name="user-eats" value="sometimes" type="radio" class="input-radio">Sometimes</label>
+                <label><input name="user-eats" value="rarely" type="radio" class="input-radio">Rarely</label>
+            </div>
+            <div class="form-group">
+                <p>What is your favorite flavor of ice cream?<br>
+                    <span class="clue">(check all that apply)</span>
+                </p>
+                <label>
+                    <input name="favorite" value="chocolate" type="checkbox" class="input-checkbox">Chocolate
+                </label>
+                <label>
+                    <input name="favorite" value="vanilla" type="checkbox" class="input-checkbox">Vanilla
+                </label>
+                <label>
+                    <input name="favorite" value="strawberry" type="checkbox" class="input-checkbox">Strawberry
+                </label>
+                <label>
+                    <input name="favorite" value="mint" type="checkbox" class="input-checkbox">Mint Chocolate Chip
+                </label>
+                <label>
+                    <input name="favorite" value="coffee" type="checkbox" class="input-checkbox">Coffee
+                </label>
+                <label>
+                    <input name="favorite" value="peanut" type="checkbox" class="input-checkbox">Peanut Butter
+                </label>
+                <label>
+                    <input name="favorite" value="cookiedough" type="checkbox" class="input-checkbox">Cookie Dough
+                </label>
+                <label>
+                    <input name="favorite" value="rocky" type="checkbox" class="input-checkbox">Rocky Road
+                </label>
+                <label>
+                    <input name="favorite" value="cookiesncream" type="checkbox" class="input-checkbox">Cookies n' Cream
+                </label>
+                <label>
+                    <input name="favorite" value="pecan" type="checkbox" class="input-checkbox">Butter Pecan
+                </label>
+                <label>
+                    <input name="favorite" value="pistachio" type="checkbox" class="input-checkbox">Pistachio
+                </label>
+                <label>
+                    <input name="favorite" value="bdaycake" type="checkbox" class="input-checkbox">Birthday Cake
+                </label>
+                <label>
+                    <input name="favorite" value="other" type="checkbox" class="input-checkbox">Other
+                </label>
+            </div>
+            <div class="form-group">
+                <p>Please list the ones we've missed!</p>
+                <textarea id="comments" class="input-textarea" name="comment"
+                    placeholder="Enter your suggestions here..."></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit" class="submit-button">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
