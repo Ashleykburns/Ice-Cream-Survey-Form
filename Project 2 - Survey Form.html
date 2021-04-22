@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <title>Ice Cream Survey</title>
     <style>
-        body {
+ body {
   font-family: 'Lobster', cursive;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1.4;
   font-weight: bold;
   color: black;
@@ -38,7 +37,7 @@ form {
 label {
   display: flex;
   align-items: center;
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;  
 }
 input, button, select, textarea {
@@ -46,6 +45,7 @@ input, button, select, textarea {
   font-size: inherit;
   line-height: inherit;
 }
+  
 .input-textarea {
   min-height: 120px;
   width: 90%;
@@ -64,6 +64,7 @@ input, button, select, textarea {
   margin-right: auto;
   margin-top: 1rem;
 }
+
 .form-control {
     display: block;
     width: 95%;
@@ -76,11 +77,33 @@ input, button, select, textarea {
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.clue {
+    font-size: 1.2rem;
+}
 #dropdown {
   height: 3rem;
 }
 #name-label, #email-label, #number-label {
   font-size: 1.5rem;
+}
+#question {
+  font-size: 1.65rem;
+}
+
+.form-list {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.input-radio, .input-checkbox {
+    margin-right: 5px;
+}
+#often, #favorite {
+    margin-right: 8px;
+  display: inline-block;
+}
+.input-radio {
+    height: 1rem;
 }
     </style>
 </head>
@@ -107,7 +130,7 @@ input, button, select, textarea {
                     required>
             </div>
             <div class="form-group">
-                <p>What time do you eat ice cream?</p>
+                <p id="question">What time do you eat ice cream?</p>
                 <select id="dropdown" name="time" class="form-control" required>
                     <option value="anytime">Anytime!</option>
                     <option value="dinner">After dinner</option>
@@ -115,58 +138,62 @@ input, button, select, textarea {
                     <option value="other">Other</option>
                 </select>
             </div>
-            <div class="form-group">
-                <p>How often do you eat ice cream?</p>
-                <label><input name="user-eats" value="frequently" type="radio" class="input-radio">Frequently</label>
-                <label><input name="user-eats" value="sometimes" type="radio" class="input-radio">Sometimes</label>
-                <label><input name="user-eats" value="rarely" type="radio" class="input-radio">Rarely</label>
+            <div class="form-list">
+                <p id="question">How often do you eat ice cream?</p>
+                <span style="white-space: nowrap;"><label id="often"><input name="user-eats" value="frequently"
+                            type="radio" class="input-radio">Frequently</label></span>
+                <span style="white-space: nowrap;"><label id="often"><input name="user-eats" value="sometimes"
+                            type="radio" class="input-radio">Sometimes</label></span>
+                <span style="white-space: nowrap;"><label id="often"><input name="user-eats" value="rarely" type="radio"
+                            class="input-radio">Rarely</label></span>
             </div>
-            <div class="form-group">
-                <p>What is your favorite flavor of ice cream?<br>
+            <div class="form-list">
+                <p id="question">What is your favorite flavor of ice cream?<br>
                     <span class="clue">(check all that apply)</span>
                 </p>
-                <label>
-                    <input name="favorite" value="chocolate" type="checkbox" class="input-checkbox">Chocolate
-                </label>
-                <label>
-                    <input name="favorite" value="vanilla" type="checkbox" class="input-checkbox">Vanilla
-                </label>
-                <label>
-                    <input name="favorite" value="strawberry" type="checkbox" class="input-checkbox">Strawberry
-                </label>
-                <label>
-                    <input name="favorite" value="mint" type="checkbox" class="input-checkbox">Mint Chocolate Chip
-                </label>
-                <label>
-                    <input name="favorite" value="coffee" type="checkbox" class="input-checkbox">Coffee
-                </label>
-                <label>
-                    <input name="favorite" value="peanut" type="checkbox" class="input-checkbox">Peanut Butter
-                </label>
-                <label>
-                    <input name="favorite" value="cookiedough" type="checkbox" class="input-checkbox">Cookie Dough
-                </label>
-                <label>
-                    <input name="favorite" value="rocky" type="checkbox" class="input-checkbox">Rocky Road
-                </label>
-                <label>
-                    <input name="favorite" value="cookiesncream" type="checkbox" class="input-checkbox">Cookies n' Cream
-                </label>
-                <label>
-                    <input name="favorite" value="pecan" type="checkbox" class="input-checkbox">Butter Pecan
-                </label>
-                <label>
-                    <input name="favorite" value="pistachio" type="checkbox" class="input-checkbox">Pistachio
-                </label>
-                <label>
-                    <input name="favorite" value="bdaycake" type="checkbox" class="input-checkbox">Birthday Cake
-                </label>
-                <label>
-                    <input name="favorite" value="other" type="checkbox" class="input-checkbox">Other
-                </label>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="chocolate" type="checkbox" class="input-checkbox">Chocolate
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="vanilla" type="checkbox" class="input-checkbox">Vanilla
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="strawberry" type="checkbox" class="input-checkbox">Strawberry
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="mint" type="checkbox" class="input-checkbox">Mint Chocolate Chip
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="coffee" type="checkbox" class="input-checkbox">Coffee
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="peanut" type="checkbox" class="input-checkbox">Peanut Butter
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="cookiedough" type="checkbox" class="input-checkbox">Cookie Dough
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="rocky" type="checkbox" class="input-checkbox">Rocky Road
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="cookiesncream" type="checkbox" class="input-checkbox">Cookies n'
+                        Cream
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="pecan" type="checkbox" class="input-checkbox">Butter Pecan
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="pistachio" type="checkbox" class="input-checkbox">Pistachio
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="bdaycake" type="checkbox" class="input-checkbox">Birthday Cake
+                    </label></span>
+                <span style="white-space: nowrap;"><label id="favorite">
+                        <input name="favorite" value="other" type="checkbox" class="input-checkbox">Other
+                    </label></span>
             </div>
             <div class="form-group">
-                <p>Please list the ones we've missed!</p>
+                <p id="question">Please list the ones we've missed!</p>
                 <textarea id="comments" class="input-textarea" name="comment"
                     placeholder="Enter your suggestions here..."></textarea>
             </div>
@@ -176,5 +203,4 @@ input, button, select, textarea {
         </form>
     </div>
 </body>
-
 </html>
